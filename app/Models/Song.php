@@ -13,4 +13,14 @@ class Song extends Model
         'title',
         'artist_id',
     ];
+
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class);
+    }
+
+    public function albums()
+    {
+        return $this->belongsToMany(Album::class);
+    }
 }
